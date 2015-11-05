@@ -22,7 +22,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : 0
+            "Time::Piece" : 0
          }
       },
       "configure" : {
@@ -40,5 +40,5 @@
          "url" : "http://github.com/muir/Time-modules"
       }
    },
-   "version" : "2013.1113"
+   "version" : "2015.103"
 }
