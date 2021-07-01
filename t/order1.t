@@ -13,6 +13,13 @@ END { ok($finished, 'finished') if defined $finished }
 $ENV{'LANG'} = 'C';
 $ENV{'TZ'} = 'PST8PDT'; 
 
+if($^O eq 'MSWin32') {
+  # it would be nice to use POSIX for this
+  # instead since that is a public interface
+  # but of course Strawberry has borked it.
+  Time::Piece::_tzset();
+}
+
 my @x = localtime(785307957);
 my @y = gmtime(785307957);
 my $hd = $y[2] - $x[2];
